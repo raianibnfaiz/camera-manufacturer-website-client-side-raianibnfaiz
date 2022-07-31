@@ -32,11 +32,11 @@ const Purchase = () => {
         const name = event.target.name.value;
         const address = event.target.address.value;
         const phone = event.target.phone.value;
-
+        const product = event.target.product.value;
         const quantity = event.target.quantity.value;
 
 
-        const order = { email, name, address, phone, quantity };
+        const order = { email, name, address, product, phone, quantity };
         console.log(order);
         fetch('http://localhost:5000/booking', {
             method: 'POST',
@@ -54,26 +54,27 @@ const Purchase = () => {
 
     }
     return (
-        <div >
-            <h4 className='text-orange-500'>Product Name: {product.name}</h4>
+        <div className='pb-2'>
+            <h4 className='text-yellow-500 font-bold text-2xl'>Product Name: <span style={{ color: "tomato" }}>{product.name}</span></h4>
             <h5>Product Quantity : {product.quantity}</h5>
             purchase
-            <form className='grid grid-cols-1 gap-3 justify-items-center mt-2' style={{ fontFamily: 'Mate SC' }} onSubmit={handleSubmit}>
+            <form className='mb-2 grid grid-cols-1 gap-3 justify-items-center mt-2 ' style={{ fontFamily: 'Mate SC' }} onSubmit={handleSubmit}>
 
                 <input type="text" name="name" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
                 <input type="email" name="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
-                <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
-                <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="product" disabled value={product.name || ''} className="input input-bordered w-full max-w-xs" />
+                <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" required />
+                <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
                 <div class="form-control">
 
                     <label class="input-group">
                         <span>Order Quantity</span>
-                        <input type="number" onChange={handleQuantity} name='quantity' placeholder={product.sold} class="input input-bordered" />
+                        <input type="number" onChange={handleQuantity} name='quantity' placeholder={product.sold} class="input input-bordered" required />
 
                     </label>
                 </div>
 
-                {parseInt(itemNumber) > parseInt(product.quantity) ? <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" disabled /> : parseInt(itemNumber) < parseInt(product.sold) ? <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" disabled /> : <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs" />}
+                {parseInt(itemNumber) > parseInt(product.quantity) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : parseInt(itemNumber) < parseInt(product.sold) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" />}
 
 
 
