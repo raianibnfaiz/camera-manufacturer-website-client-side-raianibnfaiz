@@ -1,5 +1,6 @@
 [
     {
+        "_id": 1,
         "name": "Aperture",
         "price": "400",
         "supplier": "John Cruise",
@@ -9,6 +10,7 @@
         "sold": "4"
     },
     {
+        "_id": 2,
         "name": "Shutter Release Button",
         "price": "450",
         "supplier": "Shoaib Hossain",
@@ -18,6 +20,7 @@
         "sold": "4"
     },
     {
+        "_id": 3,
         "name": "Lens",
         "price": "200",
         "supplier": "Nick Barron",
@@ -27,15 +30,7 @@
         "sold": "4"
     },
     {
-        "name": "Memory Card",
-        "price": "900",
-        "supplier": "Ryan Gary",
-        "image": "https://i.ibb.co/P17BH2C/john-nzoka-n0i-Cl-Jpvm-PQ-unsplash.jpg",
-        "description": "This cycle has proper balance and has very light weight",
-        "quantity": "10",
-        "sold": "4"
-    },
-    {
+        "_id": 4,
         "name": "Viewfinder",
         "price": "800",
         "supplier": "Andy Jones",
@@ -45,6 +40,7 @@
         "sold": "4"
     },
     {
+        "_id": 5,
         "name": "Camera Flash",
         "price": "300",
         "supplier": "Tony Warner",
@@ -54,15 +50,7 @@
         "sold": "4"
     },
     {
-        "name": "Camera Bag",
-        "price": "250",
-        "supplier": "Gary Neville",
-        "image": "https://i.ibb.co/875tSft/7-1.jpg",
-        "description": "This cycle has fixed basket. Rider can carry something in the basket while riding",
-        "quantity": "11",
-        "sold": "4"
-    },
-    {
+        "_id": 6,
         "name": "Camera Tripod ",
         "price": "380",
         "supplier": "Mike Wilson",
