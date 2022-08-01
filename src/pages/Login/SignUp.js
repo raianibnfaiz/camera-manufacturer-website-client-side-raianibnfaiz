@@ -6,16 +6,24 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+    const [token] = useToken(user || gUser);
+    if (token) {
+
+        navigate('/home')
+    }
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = async data => {
         console.log(data);
@@ -23,11 +31,8 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         console.log("updated!")
     }
-    const navigate = useNavigate();
-    if (user || gUser) {
-        console.log(user);
-        navigate('/home')
-    }
+
+
     let signInErrorMessage;
     if (loading || gLoading || updating) {
         return <Loading></Loading>
