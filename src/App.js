@@ -8,11 +8,16 @@ import Login from './pages/Login/Login';
 import Purchase from './pages/Purchase/Purchase';
 import SignUp from './pages/Login/SignUp';
 import RequireAuth from './pages/Login/RequireAuth';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrders from './pages/Dashboard/MyOrders';
 import MyReview from './pages/Dashboard/MyReview';
+import Users from './pages/Dashboard/Users';
+import RequireAdmin from './pages/Login/RequireAdmin';
+import AddProduct from './pages/Dashboard/AddProduct';
+import ManageProducts from './pages/Dashboard/ManageProducts';
+import Payment from './pages/Dashboard/Payment';
 function App() {
   return (
     <div className="App">
@@ -30,6 +35,16 @@ function App() {
         </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<MyReview></MyReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route path='users' element={<RequireAdmin>
+            <Users></Users>
+          </RequireAdmin>}></Route>
+          <Route path='addProduct' element={<RequireAdmin>
+            <AddProduct></AddProduct>
+          </RequireAdmin>}></Route>
+          <Route path='manageProduct' element={<RequireAdmin>
+            <ManageProducts></ManageProducts>
+          </RequireAdmin>}></Route>
         </Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>

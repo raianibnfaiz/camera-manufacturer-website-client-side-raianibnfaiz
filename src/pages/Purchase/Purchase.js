@@ -32,11 +32,12 @@ const Purchase = () => {
         const name = event.target.name.value;
         const address = event.target.address.value;
         const phone = event.target.phone.value;
+        const price = event.target.price.value;
         const product = event.target.product.value;
         const quantity = event.target.quantity.value;
 
 
-        const order = { email, name, address, product, phone, quantity };
+        const order = { email, name, address, product, phone, price, quantity };
         console.log(order);
         fetch('http://localhost:5000/booking', {
             method: 'POST',
@@ -48,6 +49,9 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success!', data);
+                if (data) {
+                    toast("Order is placed successfully.")
+                }
                 event.target.reset();
                 navigate('/home');
             })
@@ -64,7 +68,15 @@ const Purchase = () => {
                 <input type="email" name="email" disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                 <input type="text" name="product" disabled value={product.name || ''} className="input input-bordered w-full max-w-xs" />
                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" required />
-                <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
+                <input type="number" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
+                <div class="form-control">
+
+                    <label class="input-group">
+                        <span>Price</span>
+                        <input type="number" name='price' value={product.price} disabled class="input input-bordered" />
+
+                    </label>
+                </div>
                 <div class="form-control">
 
                     <label class="input-group">
