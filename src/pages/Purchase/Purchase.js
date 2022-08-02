@@ -13,7 +13,7 @@ const Purchase = () => {
     const [valid, setValid] = useState('right');
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://immense-river-52979.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -39,7 +39,7 @@ const Purchase = () => {
 
         const order = { email, name, address, product, phone, price, quantity };
         console.log(order);
-        fetch('http://localhost:5000/booking', {
+        fetch('https://immense-river-52979.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -9,7 +9,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?email=${user.email}`, {
+            fetch(`https://immense-river-52979.herokuapp.com/booking?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

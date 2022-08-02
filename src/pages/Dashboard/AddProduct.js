@@ -17,7 +17,7 @@ const AddProduct = () => {
         const newProduct = { name, image, description, price, supplier, availableQuantity, minimumOrderQuantity };
         console.log(newProduct);
         // send to your database 
-        fetch('http://localhost:5000/product', {
+        fetch('https://immense-river-52979.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
