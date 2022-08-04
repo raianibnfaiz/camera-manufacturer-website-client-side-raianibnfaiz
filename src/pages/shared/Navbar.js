@@ -11,17 +11,19 @@ const Navbar = () => {
     }
     const menuItems =
         <>
-            <li><Link to='/home'>Home</Link></li>
+            <li className='font-bold'><Link to='/home'>Home</Link></li>
 
-            <li><Link to='/about'>About</Link></li>
+            <li className='font-bold'><Link to='/about'>About</Link></li>
+            <li className='font-bold'><Link to='/portfolio'>Portfolio</Link></li>
+            <li className='font-bold'><Link to='/blog'>Blogs</Link></li>
             {
-                user && <li><Link to='/dashboard'>Dashboard</Link></li>
+                user && <li className='font-bold'><Link to='/dashboard'>Dashboard</Link></li>
             }
-            <li> {user ? <button class="btn btn-outline btn-error" onClick={logout}>logout</button> : <Link to='/login'>Login</Link>}</li>
-            <li></li>
+            <li className='font-bold'> {user ? <button class="btn btn-outline btn-error" onClick={logout}>logout</button> : <Link to='/login'>Login</Link>}</li>
+
         </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gray-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -31,7 +33,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Manufacturer Products</a>
+                <Link to='/' className="btn btn-ghost normal-case text-xl text-primary-content">Camera Manufacturer Products</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

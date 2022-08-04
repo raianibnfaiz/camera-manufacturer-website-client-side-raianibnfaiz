@@ -21,6 +21,10 @@ import Payment from './pages/Dashboard/Payment';
 import WelcomeToDashboard from './pages/Dashboard/WelcomeToDashboard';
 import MyProfile from './pages/Dashboard/MyProfile';
 import AllOrders from './pages/Dashboard/AllOrders';
+import AllReviews from './pages/Reviews/AllReviews';
+import Blogs from './pages/Blogs/Blogs';
+import Portfolio from './pages/Portfolio/Portfolio';
+import NotFound from './pages/NotFound/NotFound';
 function App() {
   return (
     <div className="App">
@@ -29,6 +33,9 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='home' element={<Home></Home>}></Route>
         <Route path='about' element={<About></About>}></Route>
+        <Route path='/review' element={<AllReviews></AllReviews>}></Route>
+        <Route path='/blog' element={<Blogs></Blogs>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='purchase/:id' element={<RequireAuth>
           <Purchase></Purchase>
@@ -55,6 +62,7 @@ function App() {
           </RequireAdmin>}></Route>
         </Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

@@ -1,18 +1,24 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import './Banner.css';
 const Banner = () => {
+
     return (
         <div>
-            <div className="hero min-h-screen ">
+            <div className="hero min-h-screen mb-12 bg-gray-100 p-2 my-1 rounded-sm">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51H9gKdHwlL.jpg" />
                     <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <h1 className="text-5xl font-bold">Camera Parts <span style={{ color: "darkCyan" }}>Manufacturer</span> Store</h1>
+                        <p className="py-6">When you come to our store you will experience great customer service.  We are one of the top rated <span style={{ color: "tomato" }}>Camera </span>Parts Manufacturer Stores  in Bangladesh.</p>
+
                     </div>
                 </div>
             </div>
+
+
+
+
+
         </div>
     );
 };

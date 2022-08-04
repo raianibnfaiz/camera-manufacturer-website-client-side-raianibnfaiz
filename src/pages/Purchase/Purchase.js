@@ -17,7 +17,7 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-    let errorMessage = <p className='text-red-500'>Error</p>;
+    let errorMessage = <p className='text-red-500'>Sorry! You must order the quantity of the product between the range of available and minimum order quantity! </p>;
 
     const handleQuantity = (event) => {
         setItemNumber(event.target.value);
@@ -58,10 +58,11 @@ const Purchase = () => {
 
     }
     return (
-        <div className='pb-2'>
+        <div className='my-auto'>
             <h4 className='text-yellow-500 font-bold text-2xl'>Product Name: <span style={{ color: "tomato" }}>{product.name}</span></h4>
-            <h5>Product Quantity : {product.quantity}</h5>
-            purchase
+            <h5>Available Product Quantity : {product.availableQuantity}</h5>
+            <h5>Minimum Order Quantity : {product.minimumOrderQuantity}</h5>
+            <p> <span style={{ color: "tomato" }}>Purchase</span></p>
             <form className='mb-2 grid grid-cols-1 gap-3 justify-items-center mt-2 ' style={{ fontFamily: 'Mate SC' }} onSubmit={handleSubmit}>
 
                 <input type="text" name="name" disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
@@ -81,12 +82,13 @@ const Purchase = () => {
 
                     <label class="input-group">
                         <span>Order Quantity</span>
-                        <input type="number" onChange={handleQuantity} name='quantity' placeholder={product.sold} class="input input-bordered" required />
+                        <input type="number" onChange={handleQuantity} name='quantity' placeholder={product.minimumOrderQuantity} class="input input-bordered" required />
 
                     </label>
                 </div>
+                {parseInt(itemNumber) > parseInt(product.availableQuantity) ? errorMessage : parseInt(itemNumber) < parseInt(product.minimumOrderQuantity) ? errorMessage : " "}
 
-                {parseInt(itemNumber) > parseInt(product.quantity) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : parseInt(itemNumber) < parseInt(product.sold) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" />}
+                {parseInt(itemNumber) > parseInt(product.availableQuantity) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : parseInt(itemNumber) < parseInt(product.minimumOrderQuantity) ? <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" disabled /> : <input type="submit" value="Submit" className="btn btn-primary w-full max-w-xs" />}
 
 
 

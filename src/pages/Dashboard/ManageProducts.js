@@ -27,6 +27,7 @@ const ManageProducts = () => {
                             <th>Avatar</th>
                             <th>Name</th>
                             <th>Price</th>
+                            <th>Quantity</th>
                             <th>Action</th>
                         </tr>
                     </thead>

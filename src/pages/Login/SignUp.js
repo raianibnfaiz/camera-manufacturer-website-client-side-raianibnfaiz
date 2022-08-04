@@ -8,6 +8,7 @@ import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../shared/Loading';
 import useToken from '../../hooks/useToken';
 
+
 const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
@@ -137,6 +138,7 @@ const SignUp = () => {
 
                 </div>
             </div>
+
         </div>
     );
 };

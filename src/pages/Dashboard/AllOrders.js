@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../shared/Loading';
+import DeleteOrderModal from './DeleteOrderModal';
 import OrderRow from './OrderRow';
 const AllOrders = () => {
+    const [deletingOrder, setDeletingOrder] = useState(null);
     const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://immense-river-52979.herokuapp.com/allBooking', {
         method: 'GET',
         headers: {
@@ -25,7 +27,7 @@ const AllOrders = () => {
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Price</th>
-
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +38,7 @@ const AllOrders = () => {
                                 index={index}
                                 refetch={refetch}
 
+                                setDeletingOrder={setDeletingOrder}
                             ></OrderRow>)
                         }
 
@@ -44,6 +47,11 @@ const AllOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {deletingOrder && <DeleteOrderModal
+                deletingOrder={deletingOrder}
+                refetch={refetch}
+                setDeletingOrder={setDeletingOrder}
+            ></DeleteOrderModal>}
         </div>
     );
 };

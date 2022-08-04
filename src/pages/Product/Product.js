@@ -13,9 +13,10 @@ const Product = ({ product }) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{product.name}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-
-                    <button onClick={() => navigateToPurchase(product._id)} class='btn btn-primary'>Purchase</button>
+                    <h3>Price: {product.price}$</h3>
+                    <h3>Available Quantity: {product.availableQuantity}</h3>
+                    <h3>Minimum Order Quantity: {product.minimumOrderQuantity}</h3>
+                    <button onClick={() => navigateToPurchase(product._id)} class='btn btn-primary btn-sm'>Purchase</button>
                 </div>
             </div>
         </div>
