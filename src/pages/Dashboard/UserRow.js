@@ -17,10 +17,14 @@ const UserRow = ({ user, index, refetch }) => {
                 return res.json()
             })
             .then(data => {
-                if (data.modifiedCount > 0) {
-                    refetch();
-                    toast.success(`Successfully made an admin`);
-                }
+                toast.success(`Successfully made an admin`);
+                refetch();
+                // if (data.modifiedCount > 0) {
+                //     console.log(data);
+                //     alert('successfully make an admin');
+                //     toast.success(`Successfully made an admin`);
+                //     refetch();
+                // }
 
             })
     }
@@ -30,7 +34,7 @@ const UserRow = ({ user, index, refetch }) => {
             <th>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-            <td><button class="btn btn-xs px-1">Remove User</button></td>
+
         </tr>
 
     );

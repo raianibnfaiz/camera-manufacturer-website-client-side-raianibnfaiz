@@ -27,7 +27,7 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(inserted => {
-                if (inserted.insertedId) {
+                if (inserted?.insertedId) {
                     toast.success('Product added successfully')
                     event.target.reset();
                     navigate('/home');
