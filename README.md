@@ -1,1 +1,2 @@
-#Live website - https://manufacturer-website-54002.web.app/
+# Live website - https://manufacturer-website-54002.web.app/
+## In this project I applied React js, Tailwind Css for frontend and applied Mongodb, express js for backend and used Firebase for user authentication. User and admin both have access.There is few differences between admin and normal user's dashboard. Moreover Json Web Token is applied in this project for secure the data. For testing admin's email and password are given here: email- nobab@gmail.com, password - 123abc 
