@@ -33,7 +33,7 @@ const AddProduct = () => {
                     navigate('/home');
                 }
                 else {
-                    toast.error('Failed to add the doctor');
+                    toast.error('Failed to add Product');
                 }
             })
 

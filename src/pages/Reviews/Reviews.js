@@ -12,12 +12,12 @@ const Reviews = () => {
     }, [])
     const latestSixItems = reviews.slice(-6);
     return (
-        <div className='my-28 bg-gray-100 py-6 px-4'>
+        <div className='my-28 bg-gray-50 py-6 px-4 mx-8 rounded'>
             <div className="text-center">
                 <h3 className='text-primary-focus text-2xl mb-2 font-bold uppercase'>What people say about us</h3>
                 <h2 className='text-4xl'>Latest Reviews</h2>
             </div>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-12">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-12 mx-4">
                 {
                     latestSixItems.map(review => <PerReview key={review._id} perReview={review}></PerReview>)
                 }

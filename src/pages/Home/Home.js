@@ -10,7 +10,7 @@ import ExtraSections from './ExtraSections';
 const Home = () => {
     return (
         <div className='text-center'>
-            <div className='px-12'>
+            <div className=''>
                 <Banner></Banner>
                 <BusinessSummary></BusinessSummary>
                 <Products></Products>

@@ -16,7 +16,7 @@ const ExtraSections = () => {
             </div>
 
 
-            <div class="hero min-h-screen bg-gray-100 mb-8 rounded">
+            <div class="hero min-h-screen bg-gray-50 mb-8 rounded">
                 <div class="hero-content text-center">
                     <div class="max-w-md">
                         <h1 class="text-5xl font-bold">Don't miss!<span style={{ color: "tomato" }}> Buy Today!</span></h1>

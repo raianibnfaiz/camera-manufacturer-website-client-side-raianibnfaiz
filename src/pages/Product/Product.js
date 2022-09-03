@@ -16,6 +16,7 @@ const Product = ({ product }) => {
                     <h3>Price: {product.price}$</h3>
                     <h3>Available Quantity: {product.availableQuantity}</h3>
                     <h3>Minimum Order Quantity: {product.minimumOrderQuantity}</h3>
+                    <h3><span style={{ color: "tomato" }}>Description:</span>  {product.description}</h3>
                     <button onClick={() => navigateToPurchase(product._id)} class='btn btn-primary btn-sm'>Purchase</button>
                 </div>
             </div>
